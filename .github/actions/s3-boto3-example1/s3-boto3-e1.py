@@ -6,7 +6,7 @@ from botocore.exceptions import ClientError
 
 def create_bucket():
     bucket_name = os.environ['INPUT_BUCKET']
-    region = os.environ['INPUT_REGION']
+    region = os.environ['INPUT_BUCKET-REGION']
 
     # Create bucket
     try:

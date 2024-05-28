@@ -27,7 +27,7 @@ jobs:
         uses: ./.github/actions/s3-boto3-example1
         with:
           bucket: "${{ github.event.inputs.enter_bucket_name }}"
-          region: "${{ github.event.inputs.enter_region_name }}"
+          bucket-region: "${{ github.event.inputs.enter_region_name }}"
       
       
     
