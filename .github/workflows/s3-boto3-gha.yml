@@ -1,0 +1,34 @@
+name: AWS S3 boto3 example1 via github action
+on:
+  workflow_dispatch:
+    inputs:
+      enter_bucket_name:
+        type: string
+      enter_region_name:
+        type: string
+
+jobs:
+  s3-boto3-gha-example1:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: AWS privilege 
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+            role-to-assume: arn:aws:iam::${{ secrets.ACC_NO }}:role/sgha-oidcint
+            aws-region: us-east-1
+            
+      - name: S3 boto3 example1
+        uses: comoidcorg/aws-boto3-actions/.github/actions/s3-boto3-example1
+        with:
+          bucket: "${{ github.event.inputs.enter_bucket_name }}"
+          region: "${{ github.event.inputs.enter_region_name }}"
+      
+      
+    
+
