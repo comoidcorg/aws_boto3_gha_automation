@@ -24,7 +24,8 @@ jobs:
             aws-region: us-east-1
 
       - name: S3 boto3 example1
-        uses: ./.github/actions/s3-boto3-example1
+       # uses: ./.github/actions/s3-boto3-example1
+        uses: comoidcorg/aws-boto3-actions/.github/actions/s3-boto3-example1@main
         with:
           bucket: "${{ github.event.inputs.enter_bucket_name }}"
           bucket-region: "${{ github.event.inputs.enter_region_name }}"
