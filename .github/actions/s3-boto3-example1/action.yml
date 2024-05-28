@@ -1,0 +1,13 @@
+name: 'S3 Boto3 example one action'
+description: 'Create S3 bucket'
+inputs:
+  bucket:
+    description: 'The S3 bucket name.'
+    required: true
+  bucket-region: 
+    description: 'The region of the S3 bucket.'
+    required: false
+    default: 'us-east-1'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
