@@ -10,6 +10,7 @@ inputs:
     default: 'us-east-1'
 outputs:
   Bucketn:
+  Regionn:
     description: "Bucket name"
     
 
