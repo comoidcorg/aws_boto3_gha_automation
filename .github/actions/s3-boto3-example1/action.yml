@@ -10,8 +10,9 @@ inputs:
     default: 'us-east-1'
 outputs:
   Bucketn:
-  #Regionn:
     description: "Bucket name"
+  Regionn:
+    description: "Region name"
     
 
 runs:
