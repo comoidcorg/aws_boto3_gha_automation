@@ -22,8 +22,8 @@ def create_bucket():
             s3_client.create_bucket(Bucket=bucket_name,
                                     CreateBucketConfiguration=location)
             
-        with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_output:
-           print(f'Bucketn={bucket_name}', file=gh_output)
+      #  with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_output:
+      #     print(f'Bucketn={bucket_name}', file=gh_output)
 
     except ClientError as e:
         logging.error(e)

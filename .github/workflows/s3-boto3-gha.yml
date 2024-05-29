@@ -33,14 +33,13 @@ jobs:
           bucket: "${{ github.event.inputs.enter_bucket_name }}"
           bucket-region: "${{ github.event.inputs.enter_region_name }}"
   
-  print-deploy-result:
-    needs: [s3-boto3-gha-example1]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print deploy output
-        run: |
-          echo "${{ needs.s3-boto3-gha-example1.outputs.Bucketn }}"
-          echo "${{ needs.s3-boto3-gha-example1.outputs.Regionn }}"
+  # print-deploy-result:
+  #   needs: [s3-boto3-gha-example1]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Print deploy output
+  #       run: |
+  #         echo "${{ needs.s3-boto3-gha-example1.outputs.Bucketn }}"
     
       
       
