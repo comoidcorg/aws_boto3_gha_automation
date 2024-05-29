@@ -4,8 +4,11 @@ on:
     inputs:
       enter_bucket_name:
         type: string
+        required: true
       enter_region_name:
         type: string
+        required: false
+        default: 'us-east-1'
 
 jobs:
   s3-boto3-gha-example1:
