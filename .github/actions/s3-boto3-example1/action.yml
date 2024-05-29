@@ -11,9 +11,8 @@ inputs:
   
 outputs:
   Bucketn:
-  Regionn:
   description: 'Bucket and Region created.'
-  
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
