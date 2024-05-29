@@ -9,12 +9,9 @@ inputs:
     required: false
     default: 'us-east-1'
 outputs:
-  Bucketn:
-    description: "Bucket name"
-  Regionn:
-    description: "Region name"
+  BucketnRegion:
+    description: "Bucket and Region name"
     
-
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -36,8 +36,8 @@ jobs:
 
       - name: Display output
         run: |
-               echo "1st output ${{ steps.dockerrun.outputs.Bucketn }}"
-               echo "2nd output ${{ steps.dockerrun.outputs.Regionn }}"
+               echo "1st output ${{ steps.dockerrun.outputs.BucketnRegion }}"
+        
     
   print-deploy-result:
        needs: [s3-boto3-gha-example1]
@@ -45,7 +45,7 @@ jobs:
        steps:
          - name: Display given region output
            run: |
-             echo "${{ needs.s3-boto3-gha-example1.steps.dockerrun.outputs.Regionn }}"
+             echo "${{ needs.s3-boto3-gha-example1.steps.dockerrun.outputs.BucketnRegion }}"
 
       
  
