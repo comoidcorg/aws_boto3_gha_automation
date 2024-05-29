@@ -9,8 +9,8 @@ inputs:
     required: false
     default: 'us-east-1'
   outputs:
-  Bucketn:
-  Regionn:
+    Bucketn:
+    Regionn:
     description: 'Bucket and Region created.'
 runs:
   using: 'docker'
