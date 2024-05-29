@@ -32,6 +32,10 @@ jobs:
         with:
           bucket: "${{ github.event.inputs.enter_bucket_name }}"
           bucket-region: "${{ github.event.inputs.enter_region_name }}"
+
+      - name: Display output
+        run: |
+             echo "${{ needs.s3-boto3-gha-example1.outputs.Bucketn }}"
   
   # print-deploy-result:
   #   needs: [s3-boto3-gha-example1]
