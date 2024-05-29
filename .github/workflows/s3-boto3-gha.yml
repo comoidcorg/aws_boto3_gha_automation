@@ -34,6 +34,7 @@ jobs:
           bucket-region: "${{ github.event.inputs.enter_region_name }}"
   
   print-deploy-result:
+    needs: [s3-boto3-gha-example1]
     runs-on: ubuntu-latest
     steps:
       - name: Print deploy output
