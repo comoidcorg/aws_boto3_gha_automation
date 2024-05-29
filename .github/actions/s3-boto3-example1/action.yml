@@ -8,6 +8,10 @@ inputs:
     description: 'The region of the S3 bucket.'
     required: false
     default: 'us-east-1'
+outputs:
+  Bucketn:
+    description: "Bucket name"
+    
 
 runs:
   using: 'docker'
