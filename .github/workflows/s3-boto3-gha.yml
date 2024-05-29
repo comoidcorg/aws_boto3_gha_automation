@@ -1,11 +1,14 @@
-name: AWS S3 boto3 example1 via github action
+name: AWS S3 boto3 example1
 on:
   workflow_dispatch:
     inputs:
       enter_bucket_name:
         type: string
+        required: true
       enter_region_name:
         type: string
+        required: false
+        default: 'us-east-1'
 
 jobs:
   s3-boto3-gha-example1:
@@ -24,11 +27,14 @@ jobs:
             aws-region: us-east-1
 
       - name: S3 boto3 example1
-        uses: ./.github/actions/s3-boto3-example1
+       # uses: ./.github/actions/s3-boto3-example1
+        uses: comoidcorg/aws-boto3-actions/.github/actions/s3-boto3-example1@main
+        id: dockerrun
         with:
           bucket: "${{ github.event.inputs.enter_bucket_name }}"
-          region: "${{ github.event.inputs.enter_region_name }}"
+          bucket-region: "${{ github.event.inputs.enter_region_name }}"
+
       
-      
+ 
     
 

@@ -8,6 +8,7 @@ inputs:
     description: 'The region of the S3 bucket.'
     required: false
     default: 'us-east-1'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
