@@ -27,8 +27,10 @@ jobs:
             aws-region: us-east-1
 
       - name: S3 boto3 example1
-        uses: ./.github/actions/s3-boto3-example1
-       # uses: comoidcorg/aws-boto3-actions/.github/actions/s3-boto3-example1@main
+        # To use actions in local repo
+        # uses: ./.github/actions/s3-boto3-example1
+        # To use actions from other remote repo
+        uses: comoidcorg/aws-boto3-actions/.github/actions/s3-boto3-example1@main
         id: dockerrun
         with:
           bucket: "${{ github.event.inputs.enter_bucket_name }}"
@@ -38,15 +40,7 @@ jobs:
         run: |
                echo "1st output ${{ steps.dockerrun.outputs.BucketnRegion }}"
         
-    
-  print-deploy-result:
-       needs: [s3-boto3-gha-example1]
-       runs-on: ubuntu-latest
-       steps:
-         - name: Display given region output
-           run: |
-             echo "${{ needs.s3-boto3-gha-example1.steps.dockerrun.outputs.BucketnRegion }}"
-
+  
       
  
     
