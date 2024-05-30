@@ -23,7 +23,7 @@ def create_bucket():
                                     CreateBucketConfiguration=location)
         
         with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_output:
-            print(f'BucketnRegion={bucket_name} {region}', file=gh_output)
+            print(f'BucketnRegion={bucket_name} -and- {region}', file=gh_output)
 
     except ClientError as e:
         logging.error(e)
