@@ -1,0 +1,30 @@
+name: 'AWS Connect boto3 action'
+description: 'Create Amazon Connect instance and admin user'
+
+inputs:
+  connect-alias:
+    description: 'Amazon Connect instance alias'
+    required: true
+  connect-region:
+    description: 'AWS region'
+    required: false
+    default: 'us-east-1'
+  admin-username:
+    description: 'Admin username'
+    required: true
+  admin-password:
+    description: 'Admin password'
+    required: true
+    sensitive: true 
+    
+    
+
+outputs:
+  ConnectAccessUrl:
+    description: 'Amazon Connect login URL'
+  AdminUsername:
+    description: 'Admin user'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

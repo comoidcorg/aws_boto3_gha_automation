@@ -1,0 +1,47 @@
+name: AWS Connect boto3 example
+on:
+  workflow_dispatch:
+    inputs:
+      connect_alias:
+        type: string
+        required: true
+      admin_username:
+        type: string
+        required: true
+      admin_password:
+        type: string
+        required: true
+      region:
+        type: string
+        required: false
+        default: 'us-east-1'
+
+jobs:
+  connect-boto3:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: AWS privilege
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.ACC_NO }}:role/sgha-oidcint
+          aws-region: us-east-1
+
+      - name: Create Amazon Connect
+        uses: ./.github/actions/connect-boto3
+        id: connect
+        with:
+          connect-alias: ${{ github.event.inputs.connect_alias }}
+          connect-region: ${{ github.event.inputs.region }}
+          admin-username: ${{ github.event.inputs.admin_username }}
+          admin-password: ${{ github.event.inputs.admin_password }}
+
+      - name: Display output
+        run: |
+          echo "Connect URL: ${{ steps.connect.outputs.ConnectAccessUrl }}"
+          echo "Admin User: ${{ steps.connect.outputs.AdminUsername }}"
