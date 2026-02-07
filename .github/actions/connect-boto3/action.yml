@@ -2,17 +2,17 @@ name: 'AWS Connect boto3 action'
 description: 'Create Amazon Connect instance and admin user'
 
 inputs:
-  connect_alias:
+  connect-alias:
     description: 'Amazon Connect instance alias'
     required: true
-  connect_region:
+  connect-region:
     description: 'AWS region'
     required: false
     default: 'us-east-1'
-  admin_username:
+  admin-username:
     description: 'Admin username'
     required: true
-  admin_password:
+  admin-password:
     description: 'Admin password'
     required: true
     sensitive: true 

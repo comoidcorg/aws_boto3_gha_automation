@@ -6,10 +6,10 @@ from botocore.exceptions import ClientError
 
 
 def create_connect_and_admin():
-    alias = os.environ['INPUT_CONNECT_ALIAS']
-    region = os.environ['INPUT_CONNECT_REGION']
-    admin_user = os.environ['INPUT_ADMIN_USERNAME']
-    admin_password = os.environ['INPUT_ADMIN_PASSWORD']
+    alias = os.environ['INPUT_CONNECT-ALIAS']
+    region = os.environ['INPUT_CONNECT-REGION']
+    admin_user = os.environ['INPUT_ADMIN-USERNAME']
+    admin_password = os.environ['INPUT_ADMIN-PASSWORD']
 
     connect = boto3.client('connect', region_name=region)
 
